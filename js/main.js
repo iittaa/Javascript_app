@@ -12,6 +12,8 @@
   let random;
   let word_letter;
   let letter_num = 0;
+  let posi = 0;
+  let inputKey;
 
 
   const btn = document.querySelector("button");
@@ -37,15 +39,15 @@
   // 単語を表示する
   function setword() {
     random = Math.floor(Math.random() * words.length);
-    enWord.textContent = words[random];
+    word = words[random];
+    enWord.textContent = word
     letter();
   }
 
-  // 単語の最初の文字を取得する
+  // 単語の位置を取得する
   function letter() {
     word_letter = words[random].charAt(letter_num)
   }
-
 
 
   btn.addEventListener("click", (e) => {
@@ -53,6 +55,15 @@
       $("button").remove("");
       start = performance.now();
       setword();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === word[letter_num]) {
+      letter_num++
+      enWord.innerHTML = '<span style="color:skyblue;">' + word.substr(0,letter_num) + '</span>' + word.substr(letter_num);
+    } else {
+      return;
+    }
   });
 
 }
