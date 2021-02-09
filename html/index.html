@@ -2,15 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>タイピングゲーム</title>
+    <title>kosukeのゲーム</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   </head>
   <body>
-    <button>開始する</button>
+    <div id="timer"></div>
+      <div id="timelist">制限時間を選択してください<br>
+        <input type="radio" name="q1" value=30 checked> 30秒
+        <input type="radio" name="q1" value=60> 60秒
+        <input type="radio" name="q1" value=90> 90秒
+      </div>
+        <button id="button">開始する</button>
+    
     <div id="jp-word"></div>
     <div id="en-word"></div>
-
+    <div id="score"></div>
 
     <script src="../js/main.js"></script>
   </body>

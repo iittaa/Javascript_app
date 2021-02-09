@@ -1,11 +1,24 @@
 body{
   text-align: center;
-  height: 500px;
-  line-height: 500px;
+}
+
+#timer{
+  color: red;
+  font-size: 30px;
 }
 
 #en-word{
-  font-size: 40px;
-  color: sk;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+}
+
+#jp-word{
+  font-size: 35px;
+  letter-spacing: 0.1em;
+}
+
+button{
+  padding: 20px;
+  font-size: 25px
 }
 
