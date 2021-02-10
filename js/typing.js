@@ -18,14 +18,13 @@
   let rate;
 
   // ゲームを開始する
-  function typingStart(){
-    $("#button").remove("");
-    $("#timelist").remove("");
+  function typingStart() {
+    $("#button").hide();
+    $("#timelist").hide();
     $("#timer").text(sec);
     let cnt = sec;
-    let id = setInterval(function(){
+    let id = setInterval(() => {
       cnt--;
-      console.log(cnt)
       if (cnt <= 0) {
         clearInterval(id);
         typingFinish();
@@ -39,19 +38,28 @@
   function typingFinish(){
     avg = ((correct + wrong) / sec).toFixed(1);
     rate = ((correct * 100) / (correct + wrong)).toFixed(1)
-    $("#timer").remove("");
-    $("#en-word").remove("");
-    $("#jp-word").remove("");
+    $("#timer").hide();
+    $("#en-word").hide();
+    $("#jp-word").hide();
+    $("#button").html();
+    $("#timelist").html();
     $("#score").html(
-      `合計タイプ数 <span style="color:red; font-size:40px;">${correct + wrong}</span>回
+      `<br>
+      合計タイプ数 <span style="color:red; font-size:30px;">${correct + wrong}</span>回
       <br>
-      正答率 <span style="color:red; font-size:40px;">${rate}</span>％
+      ミスタイプ数 <span style="color:red; font-size:30px;">${wrong}</span>回
       <br>
-      平均タイプ数 <span style="color:red; font-size:40px;">${avg}</span>/秒
+      正答率 <span style="color:red; font-size:30px;">${rate}</span>％
       <br>
-      スコア
-      `
+      平均タイプ数 <span style="color:red; font-size:30px;">${avg}</span>/秒
+      <br>
+      スコア <span style="color:red; font-size:40px;">${((avg * 20) - (wrong * 0.8)).toFixed()}</span>点`
       );
+    random = 0;
+    letter_num = 0;
+    word_letter = 0;
+    $("#result").fadeIn();
+    $(".container").hide();
   }
   
   // 単語を表示する
@@ -69,7 +77,7 @@
     word_letter = enwords[random].charAt(letter_num)
   }
 
-  $("#button").click(function(){
+  $("#button").click(() => {
     const radioVal = $('input[name="q1"]:checked').val();
     sec = radioVal;
     typingStart();
