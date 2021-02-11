@@ -1,0 +1,68 @@
+body{
+  background-color: #ccc;
+}
+
+.container{
+  background-color: #fff;
+  width: 400px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+#question{
+  width: 300px;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 40px;
+  
+}
+
+#choices{
+  list-style: none;
+  padding: 0;
+}
+
+#choices li {
+  border: 1px solid #000;
+  width: 300px;
+  margin: 15px auto;
+  padding: 10px;
+  user-select: none;
+  cursor: pointer;
+}
+
+#btn {
+  color: #fff;
+  background-color: blue;
+  border: 1px solid #000;
+  width: 300px;
+  margin: 15px auto;
+  padding: 10px;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.correct{
+  background-color: rgb(182, 218, 182);
+}
+
+.correct::after{
+  content: ".....正解！";
+  color: green;
+}
+
+.wrong{
+  background-color: rgb(238, 183, 183);
+  opacity: 0.8;
+}
+
+.wrong::after{
+  content: ".....不正解！";
+  color: red;
+}
+
+.inactive{
+  opacity: 0.5;
+}
