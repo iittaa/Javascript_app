@@ -1,0 +1,52 @@
+body{
+  background-color: rgb(173, 247, 247);
+}
+
+.container1{
+  background-color: skyblue;
+  width: 600px;
+  height: 250px;
+  margin: auto;
+  display: flex;
+}
+
+.panel{
+  height: 210px;
+  margin: auto;
+  padding: 10px;
+}
+
+.panel img{
+  width: 150px;
+  height: 150px;
+  background-color: #aaa;
+}
+
+#stop1,#stop2,#stop3{
+  color: #fff;
+  background-color: blue;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  padding: auto;
+  text-align: center;
+  line-height: 40px;
+  user-select: none;
+}
+
+#start{
+  color: #fff;
+  background-color: blue;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: auto;
+  text-align: center;
+  line-height: 40px;
+  user-select: none;
+}
+
+.inactive, .unmatch{
+  opacity: 0.5;
+}
