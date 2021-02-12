@@ -58,7 +58,7 @@
     random = 0;
     letter_num = 0;
     word_letter = 0;
-    $("#result").fadeIn();
+    $("#finish").fadeIn();
     $(".container").hide();
   }
   
@@ -97,6 +97,11 @@
       letter_num = 0;
       showWord();
     }
+  });
+
+  $("#score-btn").click(() => {
+    $("#finish").hide();
+    $("#result").fadeIn();
   });
 
 }

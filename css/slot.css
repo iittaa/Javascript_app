@@ -1,13 +1,56 @@
 body{
-  background-color: rgb(173, 247, 247);
+  background-image: url("../img/yugiou.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.title{
+  color: #000;
+  background-color: gold;
+  width: 600px;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 30px;
+}
+
+.description{
+  color: #000;
+  background-color: rgb(247, 227, 118);
+  width: 800px;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 20px;
+}
+
+.description p{
+  border-bottom: 1px solid #000;
+  width: 50px;
+  margin: 5px auto;
+}
+
+
+.title p {
+  padding: 20px ;
 }
 
 .container1{
-  background-color: skyblue;
+  background-color: rgb(247, 227, 118);
   width: 600px;
   height: 250px;
   margin: auto;
   display: flex;
+}
+
+.container2{
+  background-color: rgb(247, 227, 118);
+  width: 80%;
+  height: 700px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
 }
 
 .panel{
@@ -24,7 +67,7 @@ body{
 
 #stop1,#stop2,#stop3{
   color: #fff;
-  background-color: blue;
+  background-color: orangered;
   width: 150px;
   height: 40px;
   border-radius: 10px;
@@ -36,7 +79,7 @@ body{
 
 #start{
   color: #fff;
-  background-color: blue;
+  background-color: orangered;
   width: 200px;
   height: 40px;
   border-radius: 10px;
@@ -50,3 +93,119 @@ body{
 .inactive, .unmatch{
   opacity: 0.5;
 }
+
+#money{
+  width: 500px;
+  height: 100px;
+  background-color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 100px;
+}
+
+#buy{
+  width: 600px;
+  height: 500px;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+
+#gameover, #gameclear{
+  position: fixed;
+  width: 400px;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  margin: 100px auto;
+  border-radius: 4px;
+  text-align: center; 
+
+  display: none;
+}
+
+#gameover p, #gameclear p{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#gameover img,#gameclear img{
+  width: 400px;
+  height: 250px;
+}
+
+.parts{
+  width: 180px;
+  height: 200px;
+  margin: 5px;
+}
+
+.parts div{
+  font-size: 15px;
+}
+
+.parts img{
+  width: 100px;
+  height: 150px;
+  margin: 0px auto;
+}
+
+#buy-btn1,#buy-btn2,#buy-btn3,#buy-btn4,#buy-btn5{
+  color: #fff;
+  background-color: orangered;
+  width: 50px;
+  height: 30px;
+  border-radius: 10px;
+  padding: auto;
+  text-align: center;
+  line-height: 30px;
+  user-select: none;
+}
+
+#set-exo{
+  width: 500px;
+  height:200px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.have-exo{
+  width: 500px;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: #fff;
+}
+
+.set-parts1 img, .set-parts2 img, .set-parts3 img, .set-parts4 img, .set-parts5 img{
+  width: 90px;
+  height: 140px;
+  margin: 30px 1px;
+}
+
+.array{
+  width: 500px;
+  height:300px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.array img{
+  width: 500px;
+  height:300px;
+}
+
+
+

@@ -58,3 +58,16 @@ button{
   text-decoration: none;
 }
 
+#finish {
+  width: 300px;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  margin: 100px auto;
+  border-radius: 4px;
+  text-align: center;
+  display: none;
+}

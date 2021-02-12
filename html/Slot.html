@@ -2,29 +2,102 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>スロットゲーム</title>
+    <title>エグゾディアを完成させよう</title>
     <link rel="stylesheet" href="../css/slot.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   </head>
   <body>
     <main>
+      <div class="title">
+        <p>☆☆エグゾディアを完成させよう☆☆</p>
+      </div>
+      <div class="description">
+        <p>説明</p>
+        <div>あなたは今、城之内に襲われようとしているところです。<br>スロットでお金を貯めて、エグゾディアを完成させて城之内に立ち向かいましょう！<br>所持金が０円になったらやられます。(ゲームオーバーです。)<br>スロットは１プレイ5000円です。</div>
+      </div>
       <div class="container1">
         <div class="panel">
-          <img class="img1" src="../img/seven.png">
+          <img class="img1" src="../img/panel1.png">
           <div id="stop1" class="inactive">STOP</div>
         </div>
         <div  class="panel">
-          <img class="img2" src="../img/cherry.png">
+          <img class="img2" src="../img/panel2.png">
           <div id="stop2" class="inactive">STOP</div>
         </div>
         <div class="panel">
-          <img class="img3" src="../img/bell.png">
+          <img class="img3" src="../img/panel3.jpg">
           <div id="stop3" class="inactive">STOP</div>
         </div>
       </div>
       <div id="start">START</div>
+      <div class="container2">
+        <div class="box1">
+          <div id="money"></div>
+          <div class="have-exo">所持エグゾディア</div>
+          <div id="set-exo">
+            <div class="set-parts1">
+              <img src="../img/exo1.jpg" class="inactive">
+            </div>
+            <div class="set-parts2">
+              <img src="../img/exo2.jpg" class="inactive">
+            </div>
+            <div class="set-parts3">
+              <img src="../img/exo3.jpg" class="inactive">
+            </div>
+            <div class="set-parts4">
+              <img src="../img/exo4.jpg" class="inactive">
+            </div>
+            <div class="set-parts5">
+              <img src="../img/exo5.jpg" class="inactive">
+            </div>
+          </div>
+          <div class="array">
+            <img src="../img/array.png">
+          </div>
+        </div>
+        <div class="box1">
+          <div id="buy">
+            <div class="parts">
+              <img src="../img/exo1.jpg" class="exo-img1">
+              <div>封印されし者の右腕<br>価格：50000円</div>
+              <div id="buy-btn1" class="inactive">購入</div>
+            </div>
+            <div class="parts">
+              <img src="../img/exo2.jpg" class="exo-img2">
+              <div>封印されし者エグゾディア<br>価格：100000円</div>
+              <div id="buy-btn2" class="inactive">購入</div>
+            </div>
+            <div class="parts">
+              <img src="../img/exo3.jpg" class="exo-img3">
+              <div>封印されし者の左腕<br>価格：50000円</div>
+              <div id="buy-btn3" class="inactive">購入</div>
+            </div>
+            <div class="parts">
+              <img src="../img/exo4.jpg" class="exo-img4">
+              <div>封印されし者の右足<br>価格：50000円</div>
+              <div id="buy-btn4" class="inactive">購入</div>
+            </div>
+            <div class="parts">
+              <img src="../img/exo5.jpg" class="exo-img5">
+              <div>封印されし者の左足<br>価格：50000円</div>
+              <div id="buy-btn5" class="inactive">購入</div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
+    <div id="gameclear">
+      <img src="../img/exodia.jpg">
+      <p>エグゾディア完成!! 城之内を倒した!!</p>
+      <p>GAME CLEAR!!</p>
+      <a href="">リプレイ</a>
+    </div>
+    <div id="gameover">
+      <img src="../img/jyounouti.png">
+      <p>お金がなくなり、城之内にやられました。</p>
+      <p>GAME OVER!!</p>
+      <a href="">リプレイ</a>
+    </div>
 
 
     <script src="../js/slot.js"></script>
