@@ -89,6 +89,7 @@
       img3.classList.add("unmatch");
     }
     moneyResult();
+    $("#money").text(`所持金：${haveMoney}円`);
   }
 
   // 出目の取得
@@ -124,74 +125,20 @@
 
     // 遊戯二つ
     if (p1 == 1 && p2 == 1 && p3 != 1) {
-      haveMoney += 30000;
+      haveMoney += 100000;
     } else if (p1 == 1 && p2 != 1 && p3 == 1) {
-      haveMoney += 30000;
+      haveMoney += 100000;
     } else if (p1 != 1 && p2 == 1 && p3 == 1) {
-      haveMoney += 30000;
+      haveMoney += 100000;
     }
 
     // 海馬二つ
     if (p1 == 2 && p2 == 2 && p3 != 2) {
-      haveMoney += 10000;
+      haveMoney += 100000;
     } else if (p1 == 2 && p2 != 2 && p3 == 2) {
-      haveMoney += 10000;
+      haveMoney += 100000;
     } else if (p1 != 2 && p2 == 2 && p3 == 2) {
-      haveMoney += 10000;
-    }
-
-    $("#money").text(`所持金：${haveMoney}円`);
-  }
-
-  function buycheck() {
-    if (haveMoney > 50000) {
-      if ($(".set-parts1 img").hasClass("inactive")) {
-        $("#buy-btn1").removeClass("inactive");
-      } else {
-        return;
-      }
-    } else {
-      $("#buy-btn1").addClass("inactive");
-    }
-
-    if (haveMoney > 100000) {
-      if ($(".set-parts2 img").hasClass("inactive")) {
-        $("#buy-btn2").removeClass("inactive");
-      } else {
-        return;
-      }
-    } else {
-      $("#buy-btn2").addClass("inactive");
-    }
-    
-    if (haveMoney > 50000) {
-      if ($(".set-parts3 img").hasClass("inactive")) {
-        $("#buy-btn3").removeClass("inactive");
-      } else {
-        return;
-      }
-    } else {
-      $("#buy-btn3").addClass("inactive");
-    }
-    
-    if (haveMoney > 50000) {
-      if ($(".set-parts4 img").hasClass("inactive")) {
-        $("#buy-btn4").removeClass("inactive");
-      } else {
-        return;
-      }
-    } else {
-      $("#buy-btn4").addClass("inactive");
-    }
-    
-    if (haveMoney > 50000) {
-      if ($(".set-parts5 img").hasClass("inactive")) {
-        $("#buy-btn5").removeClass("inactive");
-      } else {
-        return;
-      }
-    } else {
-      $("#buy-btn5").addClass("inactive");
+      haveMoney += 100000;
     }
   }
 
@@ -221,7 +168,7 @@
     stop1.classList.add("inactive");
     if (panelRemain === 0) {
       checkResult();
-      buycheck();
+      console.log(haveMoney)
       if (haveMoney === 0){
         $("#gameover").fadeIn();
       } else {
@@ -239,7 +186,7 @@
     stop2.classList.add("inactive");
     if (panelRemain === 0) {
       checkResult();
-      buycheck();
+      console.log(haveMoney)
       if (haveMoney === 0){
         $("#gameover").fadeIn();
       } else {
@@ -257,7 +204,8 @@
     stop3.classList.add("inactive");
     if (panelRemain === 0) {
       checkResult();
-      buycheck();
+      console.log(haveMoney)
+      panelRemain = 3;
       if (haveMoney === 0){
         $("#gameover").fadeIn();
       } else {
@@ -266,29 +214,36 @@
     }
   });
 
-  $("#buy-btn1").one("click", function() {
-    if ($("#buy-btn1").hasClass("inactive")) {
+
+
+  // 購入ボタン
+  $("#buy-btn1").click(function() {
+    if (haveMoney < 50001) {
       return;
-    } else {
-      haveMoney -= 50000;
-      buycheck();
-      exoParts--;
-      if (exoParts === 0) {
-        $("#gameclear").fadeIn();
-      }
-      $("#money").text(`所持金：${haveMoney}円`);
-      $(".exo-img1").addClass("inactive");
-      $("#buy-btn1").addClass("inactive");
-      $(".set-parts1 img").removeClass("inactive");
+    } 
+    if ($(".exo-img1").hasClass("inactive")) {
+      return;
     }
+    haveMoney -= 50000;
+    exoParts--;
+    if (exoParts === 0) {
+      $("#gameclear").fadeIn();
+    }
+    $("#money").text(`所持金：${haveMoney}円`);
+    $(".exo-img1").addClass("inactive");
+    $("#buy-btn1").addClass("inactive");
+    $(".set-parts1 img").removeClass("inactive");
+    console.log(haveMoney);
   });
 
-  $("#buy-btn2").one("click", function() {
-    if ($("#buy-btn2").hasClass("inactive")) {
+  $("#buy-btn2").click(function() {
+    if (haveMoney < 100001) {
       return;
-    } else {
+    }
+    if ($(".exo-img2").hasClass("inactive")) {
+      return;
+    }
       haveMoney -= 100000;
-      buycheck();
       exoParts--;
       if (exoParts === 0) {
         $("#gameclear").fadeIn();
@@ -297,15 +252,17 @@
       $(".exo-img2").addClass("inactive");
       $("#buy-btn2").addClass("inactive");
       $(".set-parts2 img").removeClass("inactive");
-    }
+      console.log(haveMoney);
   });
 
-  $("#buy-btn3").one("click", function() {
-    if ($("#buy-btn3").hasClass("inactive")) {
+  $("#buy-btn3").click(function() {
+    if (haveMoney < 50001) {
       return;
-    } else {
+    }
+    if ($(".exo-img3").hasClass("inactive")) {
+      return;
+    }
       haveMoney -= 50000;
-      buycheck();
       exoParts--;
       if (exoParts === 0) {
         $("#gameclear").fadeIn();
@@ -314,15 +271,17 @@
       $(".exo-img3").addClass("inactive");
       $("#buy-btn3").addClass("inactive");
       $(".set-parts3 img").removeClass("inactive");
-    }
+      console.log(haveMoney);
   });
 
-  $("#buy-btn4").one("click", function() {
-    if ($("#buy-btn4").hasClass("inactive")) {
+  $("#buy-btn4").click(function() {
+    if (haveMoney < 50000) {
       return;
-    } else {
+    }
+    if ($(".exo-img4").hasClass("inactive")) {
+      return;
+    }
       haveMoney -= 50000;
-      buycheck();
       exoParts--;
       if (exoParts === 0) {
         $("#gameclear").fadeIn();
@@ -331,15 +290,17 @@
       $(".exo-img4").addClass("inactive");
       $("#buy-btn4").addClass("inactive");
       $(".set-parts4 img").removeClass("inactive");
-    }
+      console.log(haveMoney)
   });
 
-  $("#buy-btn5").one("click", function() {
-    if ($("#buy-btn5").hasClass("inactive")) {
+  $("#buy-btn5").click(function() {
+    if (haveMoney < 50000) {
       return;
-    } else {
+    }
+    if ($(".exo-img5").hasClass("inactive")) {
+      return;
+    }
       haveMoney -= 50000;
-      buycheck();
       exoParts--;
       if (exoParts === 0) {
         $("#gameclear").fadeIn();
@@ -348,8 +309,10 @@
       $(".exo-img5").addClass("inactive");
       $("#buy-btn5").addClass("inactive");
       $(".set-parts5 img").removeClass("inactive");
-    }
+      console.log(haveMoney);
   });
 
+
+  
 
 }
